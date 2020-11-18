@@ -1,0 +1,164 @@
+@import './mixins';
+html, body {
+    height: 100%;
+}
+
+// nav Layout
+.l-nav-table {
+    background-color: $primary;
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    display: inline-block;
+    z-index: 99;
+    left: 0;
+    @include pad {
+        height: 15vh;
+    }
+    @extend %boxSizing;
+    > .l-logo {
+        width: 20%;
+        display: inline-block;
+        position: relative;
+        bottom: 25%;
+        height: 85px;
+        overflow: hidden;
+        left: 10%;
+        @include phone {
+            position: absolute;
+            left: 15%;
+            width: 65%;
+        }
+        @include pad {
+            position: absolute;
+            top: 10%;
+            width: 30%;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+    > .l-nav-mainOption {
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+        top: 37%;
+        padding-left: 0;
+        @include phone {
+            display: none;
+        }
+        @include pad {
+            top: 42%;
+        }
+        > li {
+            @extend %liStyle;
+            font-size: fontSize(18px);
+            font-family: $font-family-chinese2;
+            padding-right: 2.5rem;
+            &:hover {
+                font-weight: bolder;
+            }
+            > a:hover {
+                border-bottom: 2px solid $white;
+            }
+        }
+        > .l-nav-user {
+            padding-right: 0;
+        }
+    }
+    > .dropdown {
+        display: none;
+        @include phone {
+            display: block;
+            text-align: right;
+            top: 25%;
+            left: 80%;
+            width: 20%;
+        }
+        @include pad {
+            display: none;
+        }
+        > #dropdownMenuButton {
+            @include phone {
+                background-color: transparent;
+                border: none;
+            }
+            > i {
+                @include phone {
+                    color: $white;
+                    font-size: fontSize(28px);
+                }
+            }
+        }
+        > .dropdown-menu {
+            > a {
+                @include phone {
+                    display: block;
+                    color: #555;
+                    font-size: fontSize(18px);
+                    font-family: $font-family-chinese2;
+                    text-align: center;
+                    &:hover {
+                        background-color: #eee;
+                    } 
+                }
+            }
+        }
+    }
+}
+
+// footer Layout
+footer {
+    overflow: hidden;
+    @extend %boxSizing;
+    > .l-footer-table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $primary;
+        width: 100%;
+        > .l-logo2 {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            @include phone {
+                display: none;
+            }
+        }
+        > .l-footer-icon {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: stretch;
+            flex-wrap: wrap;
+            @include phone {
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            > li {
+                @extend %liStyle;
+                letter-spacing: fontSize(16px);
+                font-size: fontSize(24px);
+                margin-right: 1.5rem;
+                > a {
+                    color: $white;
+                    text-decoration: none;
+                    &:hover {
+                        color: $gray-200;
+                    }
+                    > i {
+                        position: relative;
+                        left: 24%;
+                        bottom: 4%;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,95 @@
+// px 轉 rem
+$basicFontSize: 16px;
+@function fontSize($px) {
+    @return ($px / $basicFontSize) * 1rem;
+}
+
+// RWD 手機板型
+@mixin phone {
+    @media (max-width: 640px) {
+        @content
+    }
+}
+
+// RWD 平板樣式
+@mixin pad {
+    @media (min-width: 641px) and (max-width: 960px) {
+        @content
+    }
+}
+
+// 樣式消除且並行
+%liStyle {
+    list-style: none;
+    display: inline-block;
+}
+
+%boxSizing {
+    box-sizing: border-box;
+}
+
+// 垂直
+%vertically {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// 垂直置中
+%center-vertically {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%boxStyle {
+    border: 1px solid #95a5a6;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+%activityImage {
+    background-size: cover;
+    background-position: right;
+}
+
+@mixin topFineTuning($percent) {
+    top: $percent;
+    transform: translateY(-50%);
+}
+
+@mixin activityFontStyle($titleColor, $dateColor, $contentColor) {
+    padding: 9rem 1rem 15rem;
+    font-family: $font-family-chinese2;
+    > strong {
+        color: $titleColor;
+        font-size: fontSize(23px);
+    }
+    > p {
+        color: $dateColor;
+        font-size: fontSize(16px);
+    }
+    > span {
+       color: $contentColor;
+       font-size: fontSize(16px);
+    }
+}
+
+@mixin scheduleShowStyle($liColor, $borderSize) {
+    font-family: $font-family-chinese2;
+    > ul {
+        list-style: none;
+        > li {
+            display: inline-block;
+            font-weight: bolder;
+            width: calc(100% / 3);
+            text-align: center;
+            font-size: fontSize(18px);
+            color: $liColor;
+            > p {
+                border-bottom: $borderSize solid black;
+                margin: 0;
+            }
+        }
+    }
+}

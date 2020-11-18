@@ -1,0 +1,279 @@
+@import './mixins';
+.aboutUsBox {
+    overflow-x: hidden;
+}
+.aboutUsImage {
+    padding: 5.3rem 0 0;
+    background-color: $gray-100;
+    @include phone {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    @include pad {
+        display: inline-block;
+    }
+    > .aboutUsImageBigBox {
+        display: inline-block;
+        padding: 0;
+        @include phone {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include pad {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        > .aboutUsImageBig {
+            background-image: url('~@/assets/image/open.png');
+            background-size: cover;
+            background-position: center bottom;
+            padding-bottom: 72%;
+            @include phone {
+                margin-bottom: 2rem;
+                padding-bottom: 100%;
+                width: 100%;
+            }
+            @include pad {
+                margin-bottom: 2rem;
+                padding-bottom: 100%;
+                width: 100%;
+            }
+        }
+    }
+    > .aboutUsContentBox {
+        vertical-align: top;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(25%);
+        @include phone {
+            max-width: 100%;
+            flex: 0 0 100%;
+            transform: none;
+        }
+        @include pad {
+            max-width: 100%;
+            flex: 0 0 100%;
+            transform: none;
+        }
+        > .aboutUsTitle {
+            width: 80%;
+            display: block;
+            color: $primary;
+            font-family: $font-family-chinese;
+            font-size: $fontSize-title;
+            margin: 0 auto 0.8rem;
+            text-align: center;
+            @include phone {
+                text-align: center;
+                padding-bottom: 2rem;
+                font-family: $font-family-chinese;
+                font-size: $fontSize-title;
+            }
+            @include pad {
+                text-align: center;
+                padding-bottom: 2rem;
+                font-family: $font-family-chinese;
+                font-size: $fontSize-title;
+            }
+        }
+        > .aboutUsContent {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            @include phone {
+                width: 100%;
+            }
+            @include pad {
+                width: 100%;
+            }
+            > .aboutUsContentFontStyle {
+                color: $primary;
+                font-family: $font-family-chinese2;
+                text-indent: 2rem;
+                font-size: fontSize(17px);
+            }
+            > .aboutUsContentFontStyle::selection {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+.weAreHere {
+    display: inline-block;
+    background-color: $primary-darken;
+    width: 100%;
+    margin: -0.5% 0 0;
+    > .OurMap {
+        display: inline-block;
+        background-image: url('~@/assets/image/weAreHere.png');
+        background-size: cover;
+        padding-bottom: 40%;
+        margin: 0 auto;
+        vertical-align: top;
+        @include phone {
+            padding: 50%;
+            width: 100%;
+        }
+        @include pad {
+            padding: 50%;
+            width: 100%;
+        }
+    }
+    > .contactInfo {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(26%);
+        @include phone {
+            flex: 0 0 100%;
+            max-width: 100%;
+            transform: none;
+        }
+        @include pad {
+            flex: 0 0 100%;
+            max-width: 100%;
+            transform: none;
+        }
+        > .weAreHereTitle {
+            color: $white;
+            font-family: $font-family-chinese;
+            font-size: $fontSize-title;
+            width: 80%;
+            text-align: center;
+            @include phone {
+                text-align: center;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                font-family: $font-family-chinese;
+                font-size: $fontSize-title;
+            }
+            @include pad {
+                text-align: center;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                font-family: $font-family-chinese;
+                font-size: $fontSize-title;
+            }
+        }
+        > .contactInfoData {
+            width: 80%;
+            display: inline-block;
+            margin-bottom: 1rem;
+            @include phone {
+                padding: 0;
+                width: 100%;
+            }
+            @include pad {
+                padding: 0;
+                width: 100%;
+            }
+            > .contactInfoDataRounds {
+                width: 100px;
+                height: 100px;
+                color: $other;
+                border-radius: 100%;
+                font-size: fontSize(43px);
+                background-color: $primary-lighten;
+                position: relative;
+                left: 20%;
+                transform: translateX(-50%);
+                text-align: center;
+                display: inline-block;
+                padding: 1rem;
+                @include pad {
+                    width: 12%;
+                }
+            }
+            > span {
+                color: $white;
+                font-family: $font-family-chinese;
+                font-size: fontSize(16px);
+                margin-left: 15%;
+                @include phone {
+                    margin-left: 11%;
+                }
+                @include pad {
+                    margin-left: 16%;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+.FAndQ {
+    color: $primary;
+    padding: 3rem 6rem;
+    @include phone {
+        padding: 3rem 1rem;
+    }
+    > h2 {
+        text-align: center;
+        padding-bottom: 2rem;
+        font-family: $font-family-chinese;
+        font-size: $fontSize-title;
+    }
+}
+.ShoppingQuestionBox {
+    padding-top: 2rem;
+    padding: 0 1rem;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    @include phone {
+        padding: 0;
+        width: 100%;
+        vertical-align: top;
+    }
+    > .ShoppingQuestion {
+        border-bottom: 2px solid $white;
+        overflow: hidden;
+        > .ShoppingQuestionTitle {
+            width: 100%;
+            font-size: fontSize(26px);
+            font-family: $font-family-chinese2;
+            position: relative;
+            cursor: pointer;
+            padding-top: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            > p {
+                display: inline-block;
+            }
+            > .QuestionOpen {
+                font-size: fontSize(55px);
+                font-family: $font-family-english;
+                position: absolute;
+                right: 3%;
+                top: -7%;
+                @include phone {
+                    right: -1%;
+                }
+            }
+        }
+    }
+    .ShoppingQuestionAnswer {
+        font-family: $font-family-chinese2;
+        padding-top: 1rem;
+        border-bottom: 2px solid $primary;
+        text-indent: 2rem;
+        @include phone {
+            font-size: fontSize(16px);
+        }
+        @include pad {
+            font-size: fontSize(24px);
+        }
+    }
+}

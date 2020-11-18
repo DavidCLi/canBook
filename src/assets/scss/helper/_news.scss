@@ -1,0 +1,50 @@
+@import './mixins';
+
+.newsTitle {
+    font-size: $fontSize-title;
+    color: $white;
+    text-align: center;
+    font-family: $font-family-chinese2;
+    font-weight: bold;
+    padding: 3rem 0;
+}
+.activityNews {
+    @include phone {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    @include pad {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    > .popularity {
+        text-align: right;
+        margin-bottom: 1rem;
+        font-family: $font-family-chinese2;
+        color: $gray-300;
+    }
+}
+.activityFontStyle1 {
+    @include activityFontStyle(#017e83, #2f3640, #2f3640);
+    text-shadow: 1px 1px 1px $gray-200;
+}
+.activityImage1 {
+    background-image: url('~@/assets/image/activity4.png');
+    @extend %activityImage;
+}
+.activityFontStyle2 {
+    @include activityFontStyle($white, $white, $white);
+    text-shadow: 1px 1px 1px $black;
+}
+.activityImage2 {
+    background-image: url('~@/assets/image/activity2.png');
+    @extend %activityImage;
+}
+.activityFontStyle3 {
+    @include activityFontStyle(#487eb0, $white, $white);
+    text-shadow: 1px 1px 1px $black;
+}
+.activityImage3 {
+    background-image: url('~@/assets/image/activity6.png');
+    @extend %activityImage;
+}

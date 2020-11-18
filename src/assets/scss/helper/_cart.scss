@@ -1,0 +1,205 @@
+@import './mixins';
+.w-60 {
+    width: 60%;
+}
+.scheduleShow {
+    @include scheduleShowStyle(#aaa, 0);
+    @include phone {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    @include pad {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    > ul {
+        @include phone {
+            padding: 0;
+        }
+        @include pad {
+            padding: 0;
+        }
+        > li {
+            @include phone {
+                padding: 0;
+            }
+            @include pad {
+                padding: 0;
+            }
+            > p {
+                @include phone {
+                    font-size: fontSize(16px);
+                }
+                @include pad {
+                    font-size: fontSize(16px);
+                }
+            }
+        }
+        > li:nth-child(1) {
+            color: #34495e;
+            > p {
+                border-bottom: 3px solid #34495e;
+            }
+        }
+    }
+}
+.cartData {
+    display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    @include phone {
+        align-items: center;
+    }
+    @include pad {
+        align-items: center;
+    }
+    > .shoppingCartList {
+        display: inline-block;
+        vertical-align: top;
+        @include phone {
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+            order: -1;
+        }
+        @include pad {
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+            order: -1;
+        }
+        strong {
+            color: $primary;
+            font-size: fontSize(22px);
+            font-family: $font-family-chinese2;
+        }
+        > .shoppingCartListTitle {
+            position: relative;
+            > .countRound {
+                margin-left: 0.2rem; 
+                color: $white;
+                display: inline-block;
+                border-radius: 30px;
+                background: #555;
+                padding: 0.05rem 0.5rem;
+                font-weight: bolder;
+                position: relative;
+                top: -3px;
+            }
+            > button {
+                position: absolute;
+                right: 0;
+            }
+        }
+        > .shoppingCartContent {
+            .qtyNum {
+                width: 20%;
+            }
+        }
+    }
+    > .orderData {
+        display: inline-block;
+        margin-bottom: 1rem;
+        @include phone {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include pad {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        > .orderTitle {
+            font-size: fontSize(22px);
+            color: $primary;
+            font-family: $font-family-chinese2;
+            font-weight: bolder;
+        }
+        label {
+            color: #777;
+            font-size: fontSize(15px);
+            font-family: $font-family-chinese2;
+            font-weight: bold;
+            > span {
+                color: $red-prompt;
+            }
+        }
+        input, textarea {
+            color: #555;
+            font-size: fontSize(16px);
+            font-family: $font-family-chinese2;
+            font-weight: bold;
+        }
+    }
+}
+.btn-prompt {
+    color: $red-prompt;
+    border-color: $red-prompt;
+    &:hover {
+        color: $white;
+        background-color: $red-prompt;
+    }
+}
+.shoppingCartContent {
+    @extend %boxStyle;
+    position: relative;
+    > button {
+        vertical-align: top;
+    }
+    > div {
+        display: inline-block;
+        font-size: fontSize(15px);
+        font-family: $font-family-chinese;
+        color: #555;
+        font-weight: bolder;
+        margin-left: 1rem;
+        > p {
+            margin: 0;
+        }
+    }
+    > span {
+        color: $primary;
+        font-size: fontSize(16px);
+        font-family: $font-family-chinese;
+        font-weight: bolder;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        @include phone {
+            bottom: 0.5rem;
+        }
+        @include pad {
+            bottom: 0.5rem;
+        }
+    }
+}
+.enterCoupon {
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    position: relative;
+    > input {
+        width: 84%;
+        display: inline-block;
+        font-weight: bolder;
+        @include pad {
+            width: 100%;
+        }
+    }
+    > div {
+        display: inline-block;
+        right: 0;
+        top: 0.5rem;
+        position: absolute;
+        > button {
+            color: $white;
+            background-color: $primary;
+            &:hover {
+                background-color: $primary-darken;
+                color: $white;
+            }
+        }
+    }
+    > span {
+        display: block;
+    }
+}

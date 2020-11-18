@@ -1,0 +1,19 @@
+@import './mixins';
+
+.navbar-style {
+    background-color:#555;
+    border-bottom: 1px solid $white;
+    font-size: 26px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.navbar-logout {
+    color: $white;
+    padding-right: 0;
+    padding-left: 0;
+    &:hover {
+        color: $white;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+}

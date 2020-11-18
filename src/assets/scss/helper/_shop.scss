@@ -1,0 +1,373 @@
+@import './mixins';
+
+.shopPaddingTop {
+    padding-top: 10rem;
+    @include phone {
+        padding-top: 7rem;
+    }
+}
+.classificationAndCart {
+    @include phone {
+        max-width: 100%;
+        flex: 0 0 100%;
+        max-width: 95%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    @include pad {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    > .booksClassification {
+        padding-bottom: 1rem;
+        border-bottom: 0.5px dotted #95a5a6;
+        position: relative;
+        > strong {
+            font-size: fontSize(22px);
+            font-family: $font-family-chinese;
+            font-weight: bolder;
+            color: $primary;
+            margin-right: 6rem;
+            @include phone {
+                margin-right: 0;
+                font-size: $fontSize-title;
+            }
+            @include pad {
+                margin-right: 0;
+                text-align: center;
+                font-size: fontSize(52px);
+            }
+        }
+        > .classificationStyle {
+            appearance: none;
+            margin-top: 1rem;
+            font-family: $font-family-chinese;
+            font-size: fontSize(16px);
+            background-color: $white;
+            color: $primary;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            border-radius: 5px;
+            border: 0.5px solid $primary;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            &:hover {
+                background-color: #eee;
+            }
+            @include phone {
+                padding: 0.5rem 0.1rem 0.5rem 0.8rem;
+            }
+            @include pad {
+                padding: 0.5rem 0.1rem 0.5rem 0.8rem;
+                font-size: fontSize(32px);
+            }
+        }
+        > .classificationIcon {
+            color: $primary;
+            font-size: fontSize(20px);
+            position: absolute;
+            top: 48%;
+            right: 5%;
+            @include phone {
+                font-size: fontSize(32px);
+                top: 53%;
+            }
+            @include pad {
+                font-size: fontSize(52px);
+                top: 50%;
+            }
+        }
+    }
+}
+.lumpSum {
+    @extend %boxStyle;
+    position: relative;
+    > strong {
+        font-size: fontSize(16px);
+        font-family: $font-family-chinese;
+        color: #555;
+    }
+    > span {
+        display: inline-block;
+        color: $primary;
+        font-size: fontSize(16px);
+        font-family: $font-family-chinese;
+        font-weight: bolder;
+        text-align: right;
+        position: absolute;
+        right: 1rem;
+    }
+}
+.totalBooks {
+    @include phone {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    @include pad {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .totalBooksTitle {
+        font-size: $fontSize-title;
+        font-weight: bold;
+        font-family: $font-family-chinese2;
+        color: $primary;
+        margin-bottom: 1rem;
+        text-align: center;
+        @include pad {
+            font-size: fontSize(52px);
+            font-weight: bold;
+        }
+    }
+    .totalBooksCard {
+        display: inline-grid;
+        margin-bottom: 3rem;
+        @include phone {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include pad {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        > .cardImg {
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            cursor: pointer;
+            &:hover {
+                > img {
+                    transform: scale(1.05, 1.05);
+                    transition: .5s;
+                }
+            }
+            > img {
+                width: 100%;
+                transition: .5s;
+            }
+        }
+        .totalBooksCardFontStyle {
+            width: 100%;
+            > strong {
+                font-size: fontSize(18px);
+                font-weight: bolder;
+                font-family: $font-family-chinese;
+                display: block;
+                @include phone {
+                    font-size: fontSize(22px);
+                }
+                @include pad {
+                    font-size: fontSize(30px);
+                }
+            }
+            > span {
+                font-family: Arial, sans-serif;
+                font-weight: bolder;
+                color: $red;
+                font-size: fontSize(16px);
+                @include phone {
+                    font-size: fontSize(20px);
+                }
+                @include pad {
+                    font-size: fontSize(28px);
+                }
+            }
+            > i {
+                position: absolute;
+                right: 10%;
+                font-size: fontSize(16px);
+                color: gray;
+                cursor: pointer;
+                @include phone {
+                    font-size: fontSize(20px);
+                    bottom: 1%;
+                }
+                @include pad {
+                    font-size: fontSize(28px);
+                    bottom: 1%;
+                }
+            }
+        }
+    }
+}
+.pagination {
+    @include phone {
+        font-size: fontSize(20px);
+    }
+    @include pad {
+        font-size: fontSize(32px);
+    }
+}
+.shoppingCartIcon {
+    border: 3px solid#aaa;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 99;
+    background-color: $white;
+    cursor: pointer;
+    &:hover {
+        background-color: #aaa;
+        > i {
+            color: $white;
+        }
+    }
+    > i {
+        position: absolute;
+        @extend %center-vertically;
+        font-size: fontSize(28px);
+        color: #777;
+    }
+    > .shoppingCartQty {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: $red;
+        color: $white;
+        border-radius: 30px;
+        right: -13%;
+        text-align: center;
+        top: 0%;
+        font-weight: bold;
+    }
+}
+.shoppingSideBar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -21%;
+    border-left: 1px solid $primary;
+    box-shadow: 0 0 8px $primary-lighten;
+    width: 20%;
+    z-index: 101;
+    max-width: 20%;
+    background-color: $white;
+    height: 100%;
+    overflow-y: auto;
+    &:before {
+        content: '';
+        width: 450%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        display: block;
+        position: fixed;
+        right: 20%;
+        top: 0;
+    }
+    @include phone {
+        width: 80%;
+        max-width: 80%;
+        &:before {
+            width: 80%;
+            right: 80%;
+        }
+    }
+    @include pad {
+        width: 40%;
+        max-width: 40%;
+        &:before {
+            width: 60%;
+            right: 40%;
+        }
+    }
+    > .shoppingSideBarTitle {
+        color: $white;
+        background-color: $primary;
+        padding: 6% 8%;
+        font-size: fontSize(18px);
+        font-family: $font-family-chinese2;
+        > span {
+            margin-right: 6rem;
+            @include phone {
+                margin-right: 8rem;
+            }
+            @include pad {
+                margin-right: 9rem;
+            }
+        }
+        > i {
+            cursor: pointer;
+            font-size: fontSize(32px);
+            position: absolute;
+            right: 5%;
+            top: 2.5%;
+        }
+    }
+    > .shoppingSideBarZero {
+        padding: 6%;
+        font-weight: bold;
+        font-family: $font-family-chinese;
+        height: 100vh;
+    }
+    > .shoppingSideBarContent {
+        background-color: $white;
+        > .shoppingSideBarList {
+            padding: 7% 6%;
+            > .shoppingSideBarDataDel {
+                position: absolute;
+                font-weight: bolder;
+                color: $red;
+                cursor: pointer;
+                left: 3%;
+                font-size: fontSize(16px);
+            }
+            > img {
+                width: 30%;
+                height: 30%;
+                vertical-align: top;
+            }
+            > .shoppingSideBarData {
+                width: 70%;
+                height: 70%;
+                font-family: $font-family-chinese;
+                display: inline-block;
+                > p {
+                    color: $primary;
+                    font-weight: bolder;
+                }
+                > span {
+                    font-size: fontSize(14px);
+                    margin-right: 2rem;
+                }
+            }
+        }
+        > .shoppingSideBarTotal {
+            font-family: $font-family-english;
+            font-weight: bold;
+            text-align: right;
+            padding: 5% 5%;
+            > p {
+                border-top: 2px solid $gray-100;
+                padding: 6% 0 0;
+            }
+            > .delAllBtn {
+                border: none;
+                color: $red-prompt;
+                background-color: $white;
+                font-family: $font-family-chinese2;
+                font-weight: bold;
+            }
+        }
+    }
+    > .shoppingSideBarGetOrderBtn {
+        background-color: $red;
+        font-family: $font-family-chinese2;
+        text-decoration: none;
+        color: $white;
+        width: 90%;
+        display: block;
+        text-align: center;
+        margin: 1rem auto;
+        font-size: fontSize(16px);
+        &:hover {
+            background-color: darken($red, 10%);
+        }
+    }
+}

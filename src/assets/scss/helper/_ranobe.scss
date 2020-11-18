@@ -1,0 +1,39 @@
+.ranobeTitle {
+    color: $primary;
+    font-size: $fontSize-title;
+    text-align: center;
+    font-family: $font-family-chinese;
+    font-weight: bold;
+    padding: 3rem 0;
+}
+.ranobeBox {
+    @include phone {
+        flex: 0 0 100%;
+        max-width: 100%;
+    } 
+}
+.cardFontStyle {
+    > p {
+        @include phone {
+            margin-top: 1.5rem;
+        }
+    }
+    > span {
+        @include phone {
+            display: block;
+            top: 45%;
+        }
+    }
+    > strong {
+        font-size: 1.25rem;
+        width: 80%;
+        display: inline-block;
+        color: $primary;
+        @include phone {
+            width: 100%;
+            font-size: 1.25rem;
+            display: inline-block;
+            color: $primary;
+        }
+    }
+}
